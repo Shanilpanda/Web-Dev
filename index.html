@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <script src="./src/particles/particles.js" defer></script>
+    <script src="./src/particles/app.js" defer></script>
+    <script src="./src/app.js" type="module"></script>
+    <title>Calculator Tool 2.0</title>
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <div class="main-container">
+      <div id="loading-bar">
+        <div class="load-anim"></div>
+        <div class="load-anim"></div>
+        <div class="load-anim"></div>
+      </div>
+      <header>
+        <nav id="main-nav" class="button-container">
+          <span class="marker"></span>
+          <button class="text-shadow">Calculator</button>
+          <button class="text-shadow">Currency Converter</button>
+          <button class="text-shadow">Units Converter</button>
+        </nav>
+      </header>
+      <main>
+        <div id="slider-cont">
+          <section id="calculator">
+            <div id="calc-container">
+              <div id="display">
+                <div class="row"></div>
+              </div>
+              <button class="button" data-value="7">7</button>
+              <button class="button" data-value="8">8</button>
+              <button class="button" data-value="9">9</button>
+              <button class="button operand" data-value="+">+</button>
+              <button class="button" data-value="4">4</button>
+              <button class="button" data-value="5">5</button>
+              <button class="button" data-value="6">6</button>
+              <button class="button operand" data-value="-">-</button>
+              <button class="button" data-value="1">1</button>
+              <button class="button" data-value="2">2</button>
+              <button class="button" data-value="3">3</button>
+              <button class="button operand" data-value="*">X</button>
+              <button class="button" data-value=".">.</button>
+              <button class="button" data-value="0">0</button>
+              <button class="button operand" data-value="Backspace">del</button>
+              <button class="button operand " data-value="/">&#247;</button>
+              <button class="button" data-value="Delete">CLEAR</button>
+              <button class="button operand" data-value="=">=</button>
+            </div>
+          </section>
+          <section id="currency-converter">
+              <div class="input-container">
+                <label>United States Dollar</label>
+                <select id="currency-from">
+                  <option value="EUR">EUR</option>
+                  <option value="USD">USD</option>
+                </select>
+                <input type="number" id="input-currency" min="0" placeholder="From..."/>
+              </div>
+              <div class="convert-buttons">
+                <button id="exchange-button" class="convert-btn button">
+                  Convert
+                  <img class="zero-width" height="14px" src="./assets/images/arrow-right-solid.svg" />
+                </button>
+                <button id="currency-swap-button" class="swap button">
+                  <img width="30px" height="30px"src="./assets/images/arrows-rotate-solid.svg" alt="Swap Units" />
+                </button>
+              </div>
+              <div class="input-container">
+                <label>Euro</label>
+                <select id="currency-to">
+                  <option value="USD">USD</option>
+                  <option value="EUR">EUR</option>
+                </select>
+                <input type="number" disabled id="output-currency" placeholder="To..."/>
+              </div>
+          </section>
+          <section id="units-converter">
+            <nav class="button-container unit-buttons">
+              <span class="marker"></span>
+              <button value="length">Length</button>
+              <button value="temp">Temperature</button>
+              <button value="volume">Volume</button>
+              <button value="area">Area</button>
+              <button value="weight">Weight</button>
+              <button value="time">Time</button>
+            </nav>
+            <div id="unit-container">
+              <div class="input-container">
+                <input type="number" min="0" name="from" placeholder="From..."
+                  id="unit-from" />
+                <input
+                  disabled
+                  type="text"
+                  name="to"
+                  placeholder="To..."
+                  id="unit-to" />
+              </div>
+              <div class="convert-buttons">
+                <button id="convert-button" class="convert-btn button">
+                  Convert
+                  <img class="zero-width"
+                    height="14px"
+                    src="./assets/images/arrow-right-solid.svg" />
+                </button>
+                <button id="swap-button" class="swap button">
+                  <img
+                    width="30px"
+                    height="30px"
+                    src="./assets/images/arrows-rotate-solid.svg"
+                    alt="Swap Units" />
+                </button>
+              </div>
+              <div class="radio-container">
+
+                <div id="select-unit-from" class="unit-card">
+                  <div class="unit-card-inner">
+                    <div class="front">
+                      <div>
+                        <input type="radio" name="unit-from" value="meter" />
+                        <label>Meter</label>
+                      </div>
+                      <div>
+                        <input type="radio" name="unit-from" value="kilometer" />
+                        <label>Kilometer</label>
+                      </div>
+                      <div>
+                        <input type="radio" name="unit-from" value="centimeter" />
+                        <label>Centimeter</label>
+                      </div>
+                      <div>
+                        <input type="radio" name="unit-from" value="millimeter" />
+                        <label>Millimeter</label>
+                      </div>
+                      <div>
+                        <input type="radio" name="unit-from" value="micrometer" />
+                        <label>Micrometer</label>
+                      </div>
+                      <div>
+                        <input type="radio" name="unit-from" value="nanometer" />
+                        <label>Nanometer</label>
+                      </div>
+                      <div>
+                        <input type="radio" name="unit-from" value="mile" />
+                        <label>Mile</label>
+                      </div>
+                      <div>
+                        <input type="radio" name="unit-from" value="yard" />
+                        <label>Yard</label>
+                      </div>
+                      <div>
+                        <input type="radio" name="unit-from" value="foot" />
+                        <label>Foot</label>
+                      </div>
+                      <div>
+                        <input type="radio" name="unit-from" value="inch" />
+                        <label>Inch</label>
+                      </div>
+                    </div>
+                    <div class="back">
+                    </div>
+                  </div>
+                </div>
+                <div id="select-unit-to" class="unit-card">
+                  <div class="unit-card-inner">
+                    <div class="front">
+                      <div>
+                      <input type="radio" name="unit-to" value="meter" />
+                      <label>Meter</label>
+                    </div>
+                    <div>
+                      <input type="radio" name="unit-to" value="kilometer" />
+                      <label>Kilometer</label>
+                    </div>
+                    <div>
+                      <input type="radio" name="unit-to" value="centimeter" />
+                      <label>Centimeter</label>
+                    </div>
+                    <div>
+                      <input type="radio" name="unit-to" value="millimeter" />
+                      <label>Millimeter</label>
+                    </div>
+                    <div>
+                      <input type="radio" name="unit-to" value="micrometer" />
+                      <label>Micrometer</label>
+                    </div>
+                    <div>
+                      <input type="radio" name="unit-to" value="nanometer" />
+                      <label>Nanometer</label>
+                    </div>
+                    <div>
+                      <input type="radio" name="unit-to" value="mile" />
+                      <label>Mile</label>
+                    </div>
+                    <div>
+                      <input type="radio" name="unit-to" value="yard" />
+                      <label>Yard</label>
+                    </div>
+                    <div>
+                      <input type="radio" name="unit-to" value="foot" />
+                      <label>Foot</label>
+                    </div>
+                    <div>
+                      <input type="radio" name="unit-to" value="inch" />
+                      <label>Inch</label>
+                    </div>
+                    </div>
+                    <div class="back">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
