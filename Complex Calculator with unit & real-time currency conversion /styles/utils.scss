@@ -1,0 +1,144 @@
+@mixin box-shadow-1 {
+    box-shadow: rgba(112, 112, 112, 0.3) 0px 1px 2px 0px,
+        rgba(112, 112, 112, 0.3) 0px 2px 6px 2px;
+}
+
+@mixin box-shadow-2 {
+    box-shadow: $container-color 0px 1px 4px, $container-color 0px 50px 100px -20px;
+}
+
+@mixin box-shadow-inset {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+        rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+@mixin box-shadow-buttons {
+    box-shadow: $box-shadow-color 5px 5px;
+}
+
+@mixin before {
+    content: "";
+    transition: 0.2s;
+    @include dimensions(100%, 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.zero-width {
+    width: 0;
+}
+
+.alert {
+    position: absolute;
+    inset: -35px auto auto 0;
+    @include border(null, null, null, 2.5rem);
+    @include box-shadow-1;
+    @include font("Ubuntu", 0.7rem, bold);
+    background-color: green;
+    color: $font-color-1;
+    text-align: center;
+    padding: 1rem;
+    z-index: 3;
+}
+
+.fade-out {
+    -webkit-animation: fade-out 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: fade-out 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes fade-out {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    70% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+
+    100% {
+        -webkit-transform: translateY(-50px);
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    70% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+
+    100% {
+        -webkit-transform: translateY(-50px);
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+}
+
+*::placeholder {
+    color: inherit;
+}
+
+[disabled] {
+    cursor: auto;
+}
+
+button:disabled {
+    background-color: gray !important;
+}
+
+.text-shadow {
+    text-shadow: 2px 2px $font-color-2;
+}
+
+#loading-bar {
+    @include dimensions(max-content, 30px);
+    display: none;
+    position: absolute;
+    inset: 10% auto auto 5%;
+    z-index: 5;
+
+    & .load-anim {
+        @include dimensions(10px, 100%);
+        @include box-shadow-1;
+        display: inline-block;
+        background-color: whitesmoke;
+        border-radius: 20px;
+        transform: skew(25deg);
+        animation: updown infinite 0.6s linear;
+    }
+
+    @keyframes updown {
+        0% {
+            transform: skew(25deg) translate(0%, 0%);
+        }
+
+        25% {
+            transform: skew(25deg) translate(25%, 50%);
+        }
+
+        50% {
+            transform: skew(25deg) translate(50%, 100%);
+        }
+
+        75% {
+            transform: skew(25deg) translate(25%, 50%);
+        }
+
+        100% {
+            transform: skew(25deg) translate(0%, 0%);
+        }
+    }
+}
