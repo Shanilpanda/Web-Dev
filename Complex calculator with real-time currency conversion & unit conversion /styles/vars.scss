@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Ubuntu&family=Yusei+Magic&display=swap");
+
+$bg-color: #316f7a;
+$container-color: #408fa5a2;
+$nav-button-color: orange;
+$nav-button-color-2: #d68813;
+$button-color: #73b1c1;
+$button-color-2: #3893aa;
+$red: rgb(206, 68, 68);
+$box-shadow-color: #316f7aa9;
+$font-color-1: whitesmoke;
+$font-color-2: rgba(109, 105, 105, 0.781);
+$font-1: "Ubuntu";
+$font-2: "Roboto Condensed";
+$font-3: "Yusei Magic";
+
+
+
+//fast-apply mixins
+//style font
+@mixin font($family, $size, $bold: 100) {
+    font-family: $family;
+    font-size: $size;
+    font-weight: $bold;
+}
+
+@mixin flex-container($direction, $wrap) {
+    display: flex;
+    flex-flow: $direction $wrap;
+}
+
+@mixin grid-container($rows, $columns) {
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+}
+
+//sets width and height
+@mixin dimensions($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+//sets border + radius
+@mixin border($style: solid, $thickness: 0px, $color: rgba(0, 0, 0, 0), $radius) {
+    border: $style $thickness $color;
+    border-radius: $radius;
+}
