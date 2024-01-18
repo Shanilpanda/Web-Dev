@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 2rem;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+input[type="text"] {
+    padding: 1rem;
+    border: 2px solid #3498db;
+    border-radius: 4px;
+    margin-right: 1rem;
+    font-size: 1rem;
+}
+
+button {
+    padding: 1rem 1.5rem;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.info-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.company-info,
+.stock-info {
+    background-color: #fff;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.stock-info {
+    order: 2;
+}
+
+#stockTable {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+#stockTable th,
+#stockTable td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+#stockTable th {
+    background-color: #f2f2f2;
+}
