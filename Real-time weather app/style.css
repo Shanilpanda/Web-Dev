@@ -1,0 +1,98 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(25, 25, 25);
+}
+
+/* body:hover{
+    background-color: rgb(250, 250, 250);
+} */
+
+/*  stick nav bar; */
+nav {
+    position: sticky;
+    top: 0;
+}
+
+#card-style {
+    height: 500px;
+    margin-top: 0;
+}
+
+.cloud-temp {
+    height: 350px;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.img-div {
+    height: 200px;
+    width: 200px;
+}
+
+img {
+    background-size: cover;
+    width: 100%;
+    transition: all 1s ease;
+}
+
+img:hover {
+    transform: rotate(50deg);
+}
+
+/* Card style; */
+.temprature-card {
+    height: 210px;
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition: all 1s ease;
+}
+
+.temprature-card:hover {
+    border: black;
+    background-color: white;
+}
+
+h1 #city-name {
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#temp {
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    color: coral;
+}
+
+.logo-style {
+    height: 30px;
+    width: 30px;
+    background-color: #ff9292;
+}
+
+.last_heading {
+    width: 100%;
+    color: white;
+    font-weight: 500;
+}
+
+/* card style end; */
+
+/* .card-div{
+    margin-top: 300px;
+    height: ;
+} */
